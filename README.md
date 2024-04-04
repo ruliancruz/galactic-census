@@ -1,2 +1,2 @@
 # galactic-census
-Census page of Star Wars universe made in HTML, CSS and JavaScript
+Census web page of planets of Star Wars universe made in HTML, CSS and JavaScript
