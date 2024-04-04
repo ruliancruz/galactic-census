@@ -21,9 +21,3 @@ No special setup is required to run this project. Simply open the `index.html` f
 ## Data Source
 
 Planet data is fetched from the [Star Wars API (SWAPI)](https://swapi.dev/api/planets), which provides a RESTful API for accessing information about the Star Wars universe.
-
-## Credits
-
-This project is created for educational purposes.
-
-Enjoy exploring the planets of the Star Wars galaxy!
