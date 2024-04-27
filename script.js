@@ -33,7 +33,7 @@ function findPlanets()
 
 async function set_planets()
 {
-  planets = await getAllPlanets('https://swapi.dev/api/planets');
+  planets = await getAllPlanets('https://swapi.py4e.com//api/planets');
   const PLANET_LIST = document.getElementById('planet_list');
 
   planets.forEach((planet) =>
