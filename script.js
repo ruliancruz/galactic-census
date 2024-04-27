@@ -3,6 +3,28 @@ let planets = [];
 
 document.addEventListener('DOMContentLoaded', function() { set_planets() })
 
+async function set_planets()
+{
+  planets = await getAllPlanets('https://swapi.py4e.com//api/planets');
+  const PLANET_LIST = document.getElementById('planet_list');
+
+  planets.forEach((planet) =>
+  {
+    let li = document.createElement("li");
+
+    li.innerHTML =
+    `
+      <button onclick="selectPlanet(${planets.indexOf(planet)})">
+        ${planet.name}
+      </button>
+    `;
+
+    PLANET_LIST.appendChild(li);
+  })
+
+  console.log(planets);
+}
+
 async function getAllPlanets(url, allPlanets = [])
 {
   const DATA = await (await fetch(url)).json();
@@ -29,28 +51,6 @@ function findPlanets()
 
     alert("Planeta não encontrado!");
   }  
-}
-
-async function set_planets()
-{
-  planets = await getAllPlanets('https://swapi.py4e.com//api/planets');
-  const PLANET_LIST = document.getElementById('planet_list');
-
-  planets.forEach((planet) =>
-  {
-    let li = document.createElement("li");
-
-    li.innerHTML =
-    `
-      <button onclick="selectPlanet(${planets.indexOf(planet)})">
-        ${planet.name}
-      </button>
-    `;
-
-    PLANET_LIST.appendChild(li);
-  })
-
-  console.log(planets);
 }
 
 async function selectPlanet(id)
